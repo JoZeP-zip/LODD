@@ -4,6 +4,13 @@ const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
+window.addEventListener("load", function () {
+    const splash = document.getElementById("splash");
+    setTimeout(() => {
+      splash.classList.add("hidden");
+    }, 2500);
+  });
+
 // estados
 let dragonActive = false;
 
@@ -85,7 +92,7 @@ ctx.save();
 ctx.translate(this.x,this.y);
 ctx.rotate(this.angle);
 
-ctx.fillStyle="#2ecc71";
+ctx.fillStyle="#8c3324";
 
 ctx.beginPath();
 ctx.ellipse(0,0,size,size*0.55,0,0,Math.PI*2);
@@ -98,7 +105,7 @@ ctx.restore();
 
 // crear cuerpo
 let segments=[];
-for(let i=0;i<7;i++){
+for(let i=0;i<6;i++){
 segments.push(new Segment(mouse.x,mouse.y));
 }
 
@@ -109,7 +116,7 @@ ctx.save();
 ctx.translate(x,y);
 ctx.rotate(angle);
 
-ctx.fillStyle="#27ae60";
+ctx.fillStyle="#8c3324";
 
 ctx.beginPath();
 ctx.moveTo(35,0);
@@ -120,7 +127,7 @@ ctx.closePath();
 ctx.fill();
 
 // cuernos
-ctx.fillStyle="#1e8449";
+ctx.fillStyle="#af4328";
 
 ctx.beginPath();
 ctx.moveTo(-10,-18);
@@ -158,7 +165,7 @@ ctx.save();
 ctx.translate(x,y);
 ctx.rotate(angle);
 
-ctx.fillStyle="rgba(39,174,96,0.6)";
+ctx.fillStyle="#af472899";
 
 ctx.beginPath();
 ctx.moveTo(0,0);
@@ -362,6 +369,7 @@ drawFire();
 ctx.fillStyle="white";
 ctx.font="16px Arial";
 ctx.textAlign="center";
+
 
 ctx.fillText(
 "Presiona ESC para que Drak regrese",

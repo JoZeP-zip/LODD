@@ -67,8 +67,8 @@ async function cargarContratos() {
                     <td>${c.correo}</td>
                     <td><span class="status ${estadoClass}">${c.estado}</span></td>
                     <td class="actions">
-                        <button onclick="abrirModalEditar(${c.id})" class="btn-edit">✏️ Editar</button>
-                        <button onclick="eliminarContrato(${c.id})" class="btn-delete">🗑️ Eliminar</button>
+                        <button onclick="abrirModalEditar(${c.id})" class="btn-edit"><img src="img/lapiz.png"> </button>
+                        <button onclick="eliminarContrato(${c.id})" class="btn-delete"><img src="img/papelera.png"> </button>
                     </td>
                 </tr>`;
         });
